@@ -9,3 +9,18 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 vim.opt.scrolloff = 8
+
+vim.api.nvim_exec2([[
+    let g:clipboard = {
+    \    'name': 'WslClipboard',
+    \    'copy': {
+    \        '+': 'clip.exe',
+    \        '*': 'clip.exe',
+    \    },
+    \    'paste': {
+    \       '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \       '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \    },
+    \    'cache_enabled': 0,
+    \}
+]], {})
