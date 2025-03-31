@@ -1,0 +1,9 @@
+## Install Neovim Config
+
+```bash
+git clone https://github.com/ "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+```
+
+## Post Installation
+
+Start Neovim and Lazy will take care of the rest!
